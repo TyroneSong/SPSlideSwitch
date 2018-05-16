@@ -26,7 +26,7 @@
         [vcArr addObject:vc];
     }
     
-    SPSlideSwitch *slideSwitch = [[SPSlideSwitch alloc] initWithFrame:CGRectMake(0, 64, 300, 300) slideDirection: SPSlideSegmentedDirectionVerticality slideInstructLocation:SPSlideInstructEnumBottom Titles:titleArray viewControllers:vcArr];
+    SPSlideSwitch *slideSwitch = [[SPSlideSwitch alloc] initWithFrame:CGRectMake(0, 64, 300, 300) slideDirection: SPSlideSegmentedDirectionVerticality Titles:titleArray viewControllers:vcArr];
     
     slideSwitch.delegate = self;
     slideSwitch.itemSelectedColor = [UIColor redColor];
@@ -35,7 +35,7 @@
     [slideSwitch showInViewController:self];
     
     
-    SPSlideSwitch *slideSwitchH = [[SPSlideSwitch alloc] initWithFrame:CGRectMake(40, 364, 300, 300) slideDirection: SPSlideSegmentedDirectionHorizontal slideInstructLocation:SPSlideInstructEnumBottom Titles:titleArray viewControllers:vcArr];
+    SPSlideSwitch *slideSwitchH = [[SPSlideSwitch alloc] initWithFrame:CGRectMake(40, 364, 300, 300) slideDirection: SPSlideSegmentedDirectionHorizontal Titles:titleArray viewControllers:vcArr];
     
     slideSwitchH.delegate = self;
     slideSwitchH.itemSelectedColor = [UIColor redColor];

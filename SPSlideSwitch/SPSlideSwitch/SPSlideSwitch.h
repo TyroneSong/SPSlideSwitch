@@ -11,14 +11,6 @@
 #import "SPSlideSegmented.h"
 
 
-typedef NS_ENUM(NSInteger, SPSlideInstructEnum) {
-    SPSlideInstructEnumNull,
-    SPSlideInstructEnumTop,
-    SPSlideInstructEnumBottom,
-    SPSlideInstructEnumLeft,
-    SPSlideInstructEnumRight,
-};
-
 @interface SPSlideSwitch : UIView
 
 
@@ -67,17 +59,16 @@ typedef NS_ENUM(NSInteger, SPSlideInstructEnum) {
 /**
  * 初始化方法
  */
--(instancetype)initWithFrame:(CGRect)frame Titles:(NSArray <NSString *>*)titles viewControllers:(NSArray <UIViewController *>*)viewControllers;
+-(instancetype)initWithFrame:(CGRect)frame slideDirection:(SPSlideSegmentedDirection)direction Titles:(NSArray <NSString *>*)titles viewControllers:(NSArray <UIViewController *>*)viewControllers;
+
 /**
  * 标题显示在ViewController中
  */
 -(void)showInViewController:(UIViewController *)viewController;
 /**
  * 标题显示在NavigationBar中
+ * 在垂直方向上无效
  */
 -(void)showInNavigationController:(UINavigationController *)navigationController;
-
-/** 初始化 */
--(instancetype)initWithFrame:(CGRect)frame slideDirection:(SPSlideSegmentedDirection)direction slideInstructLocation:(SPSlideInstructEnum)instructEnum Titles:(NSArray <NSString *>*)titles viewControllers:(NSArray <UIViewController *>*)viewControllers;
 
 @end

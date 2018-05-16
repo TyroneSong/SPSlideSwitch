@@ -16,6 +16,14 @@ static const CGFloat SegmentHeight = 40.0f;
 static const CGFloat SegmentWidth = 80.0f;
 
 
+typedef NS_ENUM(NSInteger, SPSlideInstructEnum) {
+    SPSlideInstructEnumNull,
+    SPSlideInstructEnumTop,
+    SPSlideInstructEnumBottom,
+    SPSlideInstructEnumLeft,
+    SPSlideInstructEnumRight,
+};
+
 @interface SPSlideSwitch ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,SPSlideSegmentedDelegate,UIScrollViewDelegate> {
     
     SPSlideSegmented *_segment;
@@ -23,16 +31,14 @@ static const CGFloat SegmentWidth = 80.0f;
     UIPageViewController *_pageVC;
     
     SPSlideSegmentedDirection _direction;
-    SPSlideInstructEnum _instruct;
 }
 @end
 
 @implementation SPSlideSwitch
 
-- (instancetype)initWithFrame:(CGRect)frame slideDirection:(SPSlideSegmentedDirection)direction slideInstructLocation:(SPSlideInstructEnum)instructEnum Titles:(NSArray<NSString *> *)titles viewControllers:(NSArray<UIViewController *> *)viewControllers {
+- (instancetype)initWithFrame:(CGRect)frame slideDirection:(SPSlideSegmentedDirection)direction Titles:(NSArray<NSString *> *)titles viewControllers:(NSArray<UIViewController *> *)viewControllers {
     if (self = [super initWithFrame:frame]) {
         _direction = direction;
-        _instruct = instructEnum;
         
         [self buildUI];
         
@@ -40,12 +46,6 @@ static const CGFloat SegmentWidth = 80.0f;
         self.viewControllers = viewControllers;
     }
     return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame Titles:(NSArray <NSString *>*)titles viewControllers:(NSArray <UIViewController *>*)viewControllers{
-    
-    return [self initWithFrame:frame slideDirection:SPSlideSegmentedDirectionHorizontal slideInstructLocation:SPSlideInstructEnumBottom Titles:titles viewControllers:viewControllers];
-    
 }
 
 - (void)buildUI {

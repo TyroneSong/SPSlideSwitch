@@ -42,12 +42,6 @@ static const CGFloat ItemHeight = 44;
     }
     return self;
 }
-- (instancetype)init {
-    if (self = [super init]) {
-        [self buildUI];
-    }
-    return self;
-}
 
 - (void)buildUI {
     
