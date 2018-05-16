@@ -59,6 +59,7 @@ typedef NS_ENUM(NSInteger, SPSlideInstructEnum) {
     //添加分页滚动视图控制器
     _pageVC = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:_direction == SPSlideSegmentedDirectionHorizontal ?UIPageViewControllerNavigationOrientationHorizontal : UIPageViewControllerNavigationOrientationVertical options:nil];
     _pageVC.view.frame = _direction == SPSlideSegmentedDirectionHorizontal ? CGRectMake(0, SegmentHeight, self.bounds.size.width, self.bounds.size.height - SegmentHeight) : CGRectMake(SegmentWidth, 0, self.bounds.size.width - SegmentWidth, self.bounds.size.height);
+    NSLog(@"%f", self.bounds.size.width);
     _pageVC.delegate = self;
     _pageVC.dataSource = self;
     [self addSubview:_pageVC.view];
